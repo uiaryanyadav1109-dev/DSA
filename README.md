@@ -26,6 +26,8 @@ The goal is to improve my **logical thinking, problem-solving skills, coding abi
 | 🐍 Python | Problem Solving               |
 | ⚡ C++     | DSA & Competitive Programming |
 
+---
+
 ## 🎯 Goals
 
 * Build strong DSA fundamentals
