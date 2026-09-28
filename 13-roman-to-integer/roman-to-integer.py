@@ -19,4 +19,3 @@ class Solution:
         for char in s:
             number += translations[char]
         return number
-    
