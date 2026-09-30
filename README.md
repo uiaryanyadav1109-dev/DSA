@@ -23,8 +23,8 @@ The goal is to improve my **logical thinking, problem-solving skills, coding abi
 
 | Language  | Usage                         |
 | --------- | ----------------------------- |
-| 🐍 Python | Problem Solving               |
-| ⚡ C++     | DSA & Competitive Programming |
+| 🐍 Python | DSA & Problem Solving         |
+| ⚡ C++    | DSA & Competitive Programming |
 
 ---
 
