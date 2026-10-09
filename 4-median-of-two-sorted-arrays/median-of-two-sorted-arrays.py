@@ -1,35 +1,29 @@
 
 class Solution:
     def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
-        m, n = len(nums1), len(nums2)
-
-        if m > n:
+        if len(nums1) > len(nums2):
             nums1, nums2 = nums2, nums1
-            m, n = n, m
 
-        total = m + n
+        m, n = len(nums1), len(nums2)
+        low, high = 0, m
 
-        def kth(k):
-            low = max(0, k - n)
-            high = min(k, m)
+        while low <= high:
+            i = (low + high) // 2
+            j = (m + n + 1) // 2 - i
 
-            while low <= high:
-                i = (low + high) // 2
-                j = k - i
+            a = nums1[i - 1] if i else float('-inf')
+            b = nums1[i] if i < m else float('inf')
+            c = nums2[j - 1] if j else float('-inf')
+            d = nums2[j] if j < n else float('inf')
 
-                left1 = nums1[i - 1] if i > 0 else float('-inf')
-                right1 = nums1[i] if i < m else float('inf')
-                left2 = nums2[j - 1] if j > 0 else float('-inf')
-                right2 = nums2[j] if j < n else float('inf')
+            if a <= d and c <= b:
+                if (m + n) % 2:
+                    return float(max(a, c))
+                return (max(a, c) + min(b, d)) / 2.0
 
-                if left1 > right2:
-                    high = i - 1
-                elif left2 > right1:
-                    low = i + 1
-                else:
-                    return max(left1, left2)
+            if a > d:
+                high = i - 1
+            else:
+                low = i + 1
 
-        if total % 2:
-            return float(kth(total // 2 + 1))
-
-        return (kth(total // 2) + kth(total // 2 + 1)) / 2.0
+        return 0.0
