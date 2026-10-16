@@ -1,8 +1,6 @@
-
 class Solution:
     def intToRoman(self, num: int) -> str:
         result = []
-
         for value, symbol in (
             (1000, "M"), (900, "CM"), (500, "D"),
             (400, "CD"), (100, "C"), (90, "XC"),
@@ -12,5 +10,4 @@ class Solution:
             count, num = divmod(num, value)
             if count:
                 result.append(symbol * count)
-
         return "".join(result)
