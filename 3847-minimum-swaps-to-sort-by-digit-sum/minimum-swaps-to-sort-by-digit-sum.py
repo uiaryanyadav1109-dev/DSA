@@ -1,6 +1,4 @@
 
-from typing import List
-
 class Solution:
     def minSwaps(self, nums: List[int]) -> int:
         def digit_sum(n):
